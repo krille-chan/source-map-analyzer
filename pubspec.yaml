@@ -1,0 +1,26 @@
+name: source_map_analyzer
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.18.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  source_maps: ^0.10.11
+  source_map_stack_trace: ^2.1.1
+  file_picker_cross: ^4.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+
+  uses-material-design: true
