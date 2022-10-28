@@ -19,7 +19,7 @@ build_web:
   stage: coverage
   script:
     - flutter pub get
-    - flutter build web --release --verbose
+    - flutter build web --release --verbose --base-href
   artifacts:
     paths:
       - build/web/
@@ -30,7 +30,6 @@ pages:
   stage: deploy
   image: ruby:latest
   script:
-    - sed -i 's/href="\/"/href="\/source_map_analyzer\/"/' build/web/index.html
     - mv build/web/ public/
   artifacts:
     paths:
