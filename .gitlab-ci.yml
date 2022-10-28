@@ -1,0 +1,40 @@
+image:
+  name: cirrusci/flutter
+stages:
+- coverage
+- release
+- deploy
+
+
+code_analyze:
+  stage: coverage
+  script:
+    - flutter pub get
+    - flutter format lib/ test/ --set-exit-if-changed
+    - flutter pub run import_sorter:main --no-comments --exit-if-changed
+    - flutter analyze
+
+
+build_web:
+  image: cirrusci/flutter
+  stage: coverage
+  script:
+    - flutter pub get
+    - flutter build web --release --verbose
+  artifacts:
+    paths:
+      - build/web/
+
+
+
+pages:
+  stage: deploy
+  image: ruby:latest
+  script:
+    - sed -i 's/href="\/"/href="\/source_map_analyzer\/"/' build/web/index.html
+    - mv build/web/ public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
