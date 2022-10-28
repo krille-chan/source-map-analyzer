@@ -19,7 +19,7 @@ build_web:
   stage: coverage
   script:
     - flutter pub get
-    - flutter build web --release --verbose --base-href
+    - flutter build web --release --verbose --base-href="/source_map_analyzer/"
   artifacts:
     paths:
       - build/web/
