@@ -11,7 +11,7 @@ class StackTraceOutput extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text.rich(
-             TextSpan(text: controller.mappedStackTrace.toString()),
+            TextSpan(text: controller.mappedStackTrace.toString()),
           ),
         ),
       );

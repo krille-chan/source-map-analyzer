@@ -20,8 +20,14 @@ class SourceMapLayout extends StatelessWidget {
       body: SingleChildScrollView(
         child: LayoutBuilder(builder: (context, constraints) {
           final children = [
-            StackTraceInput(controller: controller, constraints: constraints,),
-            SourceMapInput(controller: controller,constraints: constraints,),
+            StackTraceInput(
+              controller: controller,
+              constraints: constraints,
+            ),
+            SourceMapInput(
+              controller: controller,
+              constraints: constraints,
+            ),
           ];
           return constraints.maxWidth > 512
               ? Column(
@@ -31,9 +37,8 @@ class SourceMapLayout extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.min,
-
-                  mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: children,
                     ),
                     ConvertButton(controller: controller),

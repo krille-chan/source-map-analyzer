@@ -8,7 +8,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:source_map_analyzer/main.dart';
 import 'package:source_map_analyzer/src/views/source_map/source_map.dart';
 
 void main() {
